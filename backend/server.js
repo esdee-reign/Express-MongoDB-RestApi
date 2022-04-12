@@ -5,13 +5,20 @@ const { errorHandler } = require('./middlewares/errorMiddleware')
 const connectDB  = require('./config/db')
 const port = process.env.PORT || 5000;
 
+// to establish connection with db
 connectDB()
+
 const app = express();
 
+// to accept request body coming as text
 app.use(express.json())
+
+// to accept request body coming as urlencoded
 app.use(express.urlencoded({ extended: false }))
 
+// routes
 app.use('/api/goals', require('./routes/goalRoutes'))
+app.use('/api/users', require('./routes/userRoutes'))
 
 app.use(errorHandler);
 

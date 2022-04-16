@@ -72,7 +72,7 @@ function Login() {
                             id="email"
                             name="email"
                             value={email}
-                            placeholder="Enter your email" onChange={onChange}
+                            placeholder="Enter your email id" onChange={onChange}
                         />
                     </div>
                     <div className="form-group"> 

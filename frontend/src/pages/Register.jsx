@@ -65,10 +65,10 @@ function Register() {
     }
 
     return (
-        <>
+        <div className='container'>
             <section className='heading'>
                 <h1>
-                    <FaUser /> Register
+                    <FaUser />
                 </h1>
                 <p>Please create an account</p>
             </section>
@@ -104,7 +104,7 @@ function Register() {
                             id="password"
                             name="password"
                             value={password}
-                            placeholder="Enter your password" onChange={onChange}
+                            placeholder="Enter password" onChange={onChange}
                         />
                     </div>   
 
@@ -124,7 +124,7 @@ function Register() {
                     </div>
                 </form>
             </section>
-        </>
+        </div>
     )
 
 }

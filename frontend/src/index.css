@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;800&display=swap');
+
+:root {
+  --gradient: linear-gradient(200deg,  rgb(161, 255, 206), rgb(248, 255, 174),rgb(67, 198, 172));
+}
 
 * {
   margin: 0;
@@ -6,14 +10,48 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.grad-bg {
+  background: #ddd;
+  background-size: 300%;
+  background-image: var(--gradient);
+  animation: bg-animation 18s infinite;
   height: 100vh;
+}
+
+@keyframes bg-animation {
+  0% {background-position: left}
+  50% {background-position: right}
+  100% {background-position: left}
+}
+
+body {
+  font-family: 'Epilogue', sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #828282;
+  cursor: pointer;
 }
 
 p {
@@ -43,32 +81,55 @@ h3 {
   text-align: center;
 }
 
+.login-container {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+  border: 2px solid grey;
+  border-radius: 4px;
+}
+
+.dashboard-container {
+  display: flex;
+}
+
+.page {
+  position: fixed;
+  left: 100px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 20px;
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 60px;
+  border-bottom: 2px solid grey;
+  margin-bottom: 60px;        
 }
 
 .header ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-right: 40px;
 }
 
 .header ul li {
-  margin-left: 20px;
+  margin-left: 60px;
 }
 
 .header ul li a {
   display: flex;
   align-items: center;
+  color: rgb(100, 100, 100);
+  font-weight: 600;
 }
 
 .header ul li a:hover {
-  color: #777;
+  color: black;
+  font-weight: 600;
 }
 
 .header ul li a svg {
@@ -77,13 +138,10 @@ h3 {
 
 .heading {
   font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 50px;
+  font-weight: 500;
+  margin: -10px 0 20px 0;
   padding: 0 20px;
-}
-
-.heading p {
-  color: #828282;
+  color: rgb(100, 100, 100);
 }
 
 .goals {
@@ -95,8 +153,9 @@ h3 {
 .goal {
   background-color: #f4f4f4;
   margin: 10px 0;
-  padding: 20px 0 10px;
+  padding: 20px 40px;
   position: relative;
+  border-radius: 8px;
 }
 
 .goal .close {
@@ -108,14 +167,37 @@ h3 {
   background: none;
 }
 
-.form,
-.content {
+.timestamp{
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  color: #555;
+  border-bottom: 1px solid rgb(100, 100, 100);
+}
+
+.goal-text {
+  margin-top: 16px;
+}
+
+.form {
   width: 70%;
   margin: 0 auto;
 }
 
+.content {
+  width: 100%;
+  margin: 60px auto 0 auto;
+  padding: 0 30px;
+  height: 260px;
+  overflow-y: scroll;
+}
+
 .form-group {
   margin-bottom: 10px;
+}
+
+input {
+  font-size: 16px;
+  padding: 6px 2px;
 }
 
 .form-group input,
@@ -135,12 +217,24 @@ h3 {
   margin: 0 0 5px 3px;
 }
 
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: rgb(100, 100, 100);
+}
+
+.logo:hover {
+  color: #000;
+}
+
+
 .btn {
   padding: 10px 20px;
-  border: 1px solid #000;
+  border: 2px solid rgb(100, 100, 100);
   border-radius: 5px;
-  background: #000;
-  color: #fff;
+  background: none;
+  color: rgb(100, 100, 100);
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -167,6 +261,8 @@ h3 {
 
 .btn:hover {
   transform: scale(0.98);
+  color: black;
+  border: 2px solid black;
 }
 
 .loadingSpinnerContainer {
